@@ -20,6 +20,8 @@ defmodule BasicMailerAppWeb.Router do
   scope "/", BasicMailerAppWeb do
     pipe_through :browser
 
+    get "/send_email", PageController, :send_email
+
     get "/", PageController, :index
   end
 
