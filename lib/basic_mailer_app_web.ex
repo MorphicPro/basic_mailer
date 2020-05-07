@@ -71,6 +71,17 @@ defmodule BasicMailerAppWeb do
     end
   end
 
+  def mailer_view do
+    quote do
+      use Phoenix.View,
+        root: "lib/basic_mailer_app_web/templates",
+        namespace: BasicMailerAppWeb
+
+      use Phoenix.HTML
+
+    end
+  end
+
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
   """
