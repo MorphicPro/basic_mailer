@@ -6,6 +6,11 @@ defmodule BasicMailerAppWeb.PageController do
   end
 
   def send_email(conn, _params) do
+
+    # Create and send the email
+    BasicMailerAppWeb.Email.random_email()
+    |> IO.inspect()
+
     render(conn, "send_email.html")
   end
 end
