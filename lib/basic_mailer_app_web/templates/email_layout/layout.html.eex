@@ -1,0 +1,2 @@
+<h1> Some Email Layout for HTML</h1>
+<%= @inner_content %>
