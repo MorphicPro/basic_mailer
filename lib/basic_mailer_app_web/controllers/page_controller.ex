@@ -9,7 +9,7 @@ defmodule BasicMailerAppWeb.PageController do
 
     # Create and send the email
     BasicMailerAppWeb.Email.random_email()
-    |> IO.inspect()
+    |> BasicMailerAppWeb.Mailer.deliver_now()
 
     render(conn, "send_email.html")
   end
