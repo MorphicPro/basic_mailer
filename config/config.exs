@@ -23,6 +23,11 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :basic_mailer_app, BasicMailerAppWeb.Mailer,
+  adapter: Bamboo.LocalAdapter,
+  # optional
+  open_email_in_browser_url: "http://localhost:4000/sent_emails"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

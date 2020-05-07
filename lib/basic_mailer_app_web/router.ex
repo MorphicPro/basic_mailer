@@ -13,6 +13,10 @@ defmodule BasicMailerAppWeb.Router do
     plug :accepts, ["json"]
   end
 
+  if Mix.env() == :dev do
+    forward "/sent_emails", Bamboo.SentEmailViewerPlug
+  end
+
   scope "/", BasicMailerAppWeb do
     pipe_through :browser
 
